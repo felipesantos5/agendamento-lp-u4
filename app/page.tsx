@@ -18,6 +18,12 @@ import {
   TrendingUp,
   Shield,
   Zap,
+  LifeBuoy,
+  BarChart3,
+  CalendarDays,
+  Palette,
+  CalendarCheck,
+  MessageCircleReply,
 } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -217,11 +223,16 @@ export default function Component() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-full"
+              href="https://wa.me/554891930508?text=Ol%C3%A1%21%20Vim%20do%20site%20da%20BarbeariAgendamento%20e%20gostaria%20de%20saber%20mais%20detalhes%20sobre%20o%20sistema."
+            >
               <Button className="bg-gradient-to-r from-red-500 to-blue-600 hover:from-red-600 hover:to-blue-700 text-white text-base sm:text-lg px-6 sm:px-8 py-3 w-full transition-all duration-300 max-w-96">
                 Fale com um Especialista
               </Button>
-            </motion.div>
+            </motion.a>
           </motion.div>
 
           {/* Key Stats */}
@@ -561,7 +572,7 @@ export default function Component() {
       >
         <div className="text-center mb-8 sm:mb-12">
           <motion.h2 className="text-3xl sm:text-4xl md:text-7xl font-bold mb-4" {...fadeInUp}>
-            See BarberBook in action
+            Veja o App em Ação
           </motion.h2>
           <motion.p
             className="text-slate-300 text-base sm:text-xl md:text-2xl mx-auto"
@@ -570,7 +581,7 @@ export default function Component() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Watch how easy it is to manage your barbershop with our intuitive scheduling system
+            Veja como é fácil gerenciar sua barbearia com nosso sistema de agendamento intuitivo
           </motion.p>
         </div>
 
@@ -599,8 +610,8 @@ export default function Component() {
                     <path d="M8 5v14l11-7z" />
                   </svg>
                 </motion.div>
-                <h3 className="text-xl sm:text-2xl font-bold mb-2">Demo Video</h3>
-                <p className="text-slate-300 text-sm sm:text-base">Click to watch the full demonstration</p>
+                <h3 className="text-xl sm:text-2xl font-bold mb-2">Vídeo demonstrativo</h3>
+                <p className="text-slate-300 text-sm sm:text-base">Clique para assistir à demonstração completa</p>
               </div>
               <div className="absolute inset-0 cursor-pointer hover:bg-white/5 transition-colors"></div>
             </motion.div>
@@ -619,11 +630,11 @@ export default function Component() {
       >
         <div className="text-center mb-12 sm:mb-16">
           <motion.h2 className="text-3xl sm:text-4xl md:text-7xl font-bold mb-4" {...fadeInUp}>
-            Everything your barbershop
+            Tudo o que sua barbearia precisa
             <br />
-            needs to succeed
+            para ter sucesso
           </motion.h2>
-          <motion.p
+          {/* <motion.p
             className="text-slate-300 text-base sm:text-xl md:text-2xl mx-auto"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -631,7 +642,7 @@ export default function Component() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             From online booking to payment processing, we've got every aspect of your business covered
-          </motion.p>
+          </motion.p> */}
         </div>
 
         <motion.div
@@ -643,40 +654,46 @@ export default function Component() {
         >
           {[
             {
-              icon: Calendar,
-              title: "Reserva Online",
-              description: "Let customers book appointments 24/7 through your custom booking page. Reduce phone calls and increase bookings.",
-              gradient: "from-red-500 to-blue-600",
+              icon: CalendarCheck,
+              title: "Agenda Online 24h",
+              description:
+                "Sua barbearia aberta para agendamentos 24/7. Deixe que seus clientes marquem o horário perfeito, mesmo com a porta fechada, e veja sua agenda encher sem precisar atender o telefone.",
+              gradient: "from-blue-500 to-cyan-400",
             },
             {
-              icon: Users,
-              title: "Customer Management",
-              description: "Keep detailed customer profiles with service history, preferences, and contact information all in one place.",
-              gradient: "from-blue-500 to-red-500",
+              icon: MessageCircleReply,
+              title: "Lembretes via WhatsApp",
+              description:
+                "Acabe com os 'furos' na agenda. Nosso sistema envia lembretes automáticos, garantindo que seus clientes nunca mais esqueçam o horário e reduzindo o não comparecimento a zero.",
+              gradient: "from-green-500 to-teal-400",
             },
             {
-              icon: CreditCard,
-              title: "Payment Processing",
-              description: "Accept payments online, in-person, or through the app. Automatic invoicing and receipt generation included.",
-              gradient: "from-red-500 to-blue-600",
+              icon: Palette,
+              title: "Painel de Controle Total",
+              description:
+                "Sua barbearia, suas regras. Personalize tudo: serviços, preços, horários, profissionais, planos e até as cores da sua página. Gerencie seu negócio de forma simples e visual.",
+              gradient: "from-purple-500 to-indigo-400",
             },
             {
-              icon: MessageSquare,
-              title: "Automated Reminders",
-              description: "Reduce no-shows with automatic SMS and email reminders. Customers can confirm or reschedule with one click.",
-              gradient: "from-blue-500 to-red-500",
+              icon: CalendarDays,
+              title: "Agenda Inteligente para Barbeiros",
+              description:
+                "Uma visão clara e organizada do seu dia. Visualize seus agendamentos por dia ou semana, com cores para cada profissional e detalhes do cliente a um clique. Menos confusão, mais produtividade.",
+              gradient: "from-orange-500 to-amber-400",
             },
             {
-              icon: Smartphone,
-              title: "Mobile App",
-              description: "Manage your schedule on the go with our mobile app. Available for both iOS and Android devices.",
-              gradient: "from-red-500 to-blue-600",
+              icon: BarChart3,
+              title: "Métricas que Geram Lucro",
+              description:
+                "Entenda a saúde do seu negócio em segundos. Tenha acesso a gráficos claros sobre receita bruta, comissões e serviços mais lucrativos. Tome decisões com base em dados, não em achismos.",
+              gradient: "from-red-500 to-rose-400",
             },
             {
-              icon: Clock,
-              title: "Staff Scheduling",
-              description: "Manage multiple barbers, set individual schedules, and track performance with detailed analytics.",
-              gradient: "from-blue-500 to-red-500",
+              icon: LifeBuoy,
+              title: "Suporte que Resolve",
+              description:
+                "Estamos aqui para ajudar você a crescer. Conte com um suporte rápido e humanizado, disponível todos os dias, para tirar dúvidas e garantir que sua barbearia aproveite 100% da plataforma.",
+              gradient: "from-gray-600 to-slate-500",
             },
           ].map((feature, index) => (
             <motion.div key={index} variants={scaleIn}>
@@ -819,11 +836,15 @@ export default function Component() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href="https://wa.me/554891930508?text=Ol%C3%A1%21%20Vim%20do%20site%20da%20BarbeariAgendamento%20e%20gostaria%20de%20saber%20mais%20detalhes%20sobre%20o%20sistema."
+            >
               <Button className="bg-gradient-to-r from-red-500 to-blue-600 hover:from-red-600 hover:to-blue-700 text-white text-base sm:text-lg px-6 sm:px-8 py-3 w-full sm:w-auto transition-all duration-300">
                 Falar com um Especialista
               </Button>
-            </motion.div>
+            </motion.a>
             {/* <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 variant="outline"
