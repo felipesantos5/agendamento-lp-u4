@@ -18,12 +18,6 @@ import {
   TrendingUp,
   Shield,
   Zap,
-  LifeBuoy,
-  BarChart3,
-  CalendarDays,
-  Palette,
-  CalendarCheck,
-  MessageCircleReply,
 } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -73,7 +67,7 @@ export default function Component() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="flex items-center justify-center px-4 sm:px-6 py-4 max-w-7xl mx-auto relative"
+        className="flex items-center justify-center md:justify-between px-4 sm:px-6 py-4 max-w-7xl mx-auto relative"
       >
         <motion.div
           className="flex items-center gap-2"
@@ -105,7 +99,7 @@ export default function Component() {
         </nav> */}
 
         {/* Desktop CTA Buttons */}
-        {/* <motion.div
+        <motion.div
           className="hidden sm:flex items-center gap-3"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -120,7 +114,7 @@ export default function Component() {
           <Button className="bg-gradient-to-r from-red-500 to-blue-600 hover:from-red-600 hover:to-blue-700 text-white text-sm px-4 py-2 transition-all duration-300 hover:scale-105">
             Get Started
           </Button>
-        </motion.div> */}
+        </motion.div>
 
         {/* Mobile Menu Button */}
         {/* <motion.button
@@ -589,7 +583,7 @@ export default function Component() {
             className="text-3xl sm:text-4xl md:text-7xl font-bold mb-4"
             {...fadeInUp}
           >
-            Veja o App em Ação
+            See BarberBook in action
           </motion.h2>
           <motion.p
             className="text-slate-300 text-base sm:text-xl md:text-2xl mx-auto"
@@ -598,8 +592,8 @@ export default function Component() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Veja como é fácil gerenciar sua barbearia com nosso sistema de
-            agendamento intuitivo
+            Watch how easy it is to manage your barbershop with our intuitive
+            scheduling system
           </motion.p>
         </div>
 
@@ -633,10 +627,10 @@ export default function Component() {
                   </svg>
                 </motion.div>
                 <h3 className="text-xl sm:text-2xl font-bold mb-2">
-                  Vídeo demosntração
+                  Demo Video
                 </h3>
                 <p className="text-slate-300 text-sm sm:text-base">
-                  Clique para ver o vídeo de demostração
+                  Click to watch the full demonstration
                 </p>
               </div>
               <div className="absolute inset-0 cursor-pointer hover:bg-white/5 transition-colors"></div>
@@ -659,11 +653,11 @@ export default function Component() {
             className="text-3xl sm:text-4xl md:text-7xl font-bold mb-4"
             {...fadeInUp}
           >
-            Tudo o que sua barbearia precisa
+            Everything your barbershop
             <br />
-            para ter sucesso
+            needs to succeed
           </motion.h2>
-          {/* <motion.p
+          <motion.p
             className="text-slate-300 text-base sm:text-xl md:text-2xl mx-auto"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -672,7 +666,7 @@ export default function Component() {
           >
             From online booking to payment processing, we've got every aspect of
             your business covered
-          </motion.p> */}
+          </motion.p>
         </div>
 
         <motion.div
@@ -684,46 +678,46 @@ export default function Component() {
         >
           {[
             {
-              icon: CalendarCheck,
-              title: "Agenda Online 24h",
+              icon: Calendar,
+              title: "Reserva Online",
               description:
-                "Sua barbearia aberta para agendamentos 24/7. Deixe que seus clientes marquem o horário perfeito, mesmo com a porta fechada, e veja sua agenda encher sem precisar atender o telefone.",
-              gradient: "from-blue-500 to-cyan-400",
+                "Let customers book appointments 24/7 through your custom booking page. Reduce phone calls and increase bookings.",
+              gradient: "from-red-500 to-blue-600",
             },
             {
-              icon: MessageCircleReply,
-              title: "Lembretes via WhatsApp",
+              icon: Users,
+              title: "Customer Management",
               description:
-                "Acabe com os 'furos' na agenda. Nosso sistema envia lembretes automáticos, garantindo que seus clientes nunca mais esqueçam o horário e reduzindo o não comparecimento a zero.",
-              gradient: "from-green-500 to-teal-400",
+                "Keep detailed customer profiles with service history, preferences, and contact information all in one place.",
+              gradient: "from-blue-500 to-red-500",
             },
             {
-              icon: Palette,
-              title: "Painel de Controle Total",
+              icon: CreditCard,
+              title: "Payment Processing",
               description:
-                "Sua barbearia, suas regras. Personalize tudo: serviços, preços, horários, profissionais, planos e até as cores da sua página. Gerencie seu negócio de forma simples e visual.",
-              gradient: "from-purple-500 to-indigo-400",
+                "Accept payments online, in-person, or through the app. Automatic invoicing and receipt generation included.",
+              gradient: "from-red-500 to-blue-600",
             },
             {
-              icon: CalendarDays,
-              title: "Agenda Inteligente para Barbeiros",
+              icon: MessageSquare,
+              title: "Automated Reminders",
               description:
-                "Uma visão clara e organizada do seu dia. Visualize seus agendamentos por dia ou semana, com cores para cada profissional e detalhes do cliente a um clique. Menos confusão, mais produtividade.",
-              gradient: "from-orange-500 to-amber-400",
+                "Reduce no-shows with automatic SMS and email reminders. Customers can confirm or reschedule with one click.",
+              gradient: "from-blue-500 to-red-500",
             },
             {
-              icon: BarChart3,
-              title: "Métricas que Geram Lucro",
+              icon: Smartphone,
+              title: "Mobile App",
               description:
-                "Entenda a saúde do seu negócio em segundos. Tenha acesso a gráficos claros sobre receita bruta, comissões e serviços mais lucrativos. Tome decisões com base em dados, não em achismos.",
-              gradient: "from-red-500 to-rose-400",
+                "Manage your schedule on the go with our mobile app. Available for both iOS and Android devices.",
+              gradient: "from-red-500 to-blue-600",
             },
             {
-              icon: LifeBuoy,
-              title: "Suporte que Resolve",
+              icon: Clock,
+              title: "Staff Scheduling",
               description:
-                "Estamos aqui para ajudar você a crescer. Conte com um suporte rápido e humanizado, disponível todos os dias, para tirar dúvidas e garantir que sua barbearia aproveite 100% da plataforma.",
-              gradient: "from-gray-600 to-slate-500",
+                "Manage multiple barbers, set individual schedules, and track performance with detailed analytics.",
+              gradient: "from-blue-500 to-red-500",
             },
           ].map((feature, index) => (
             <motion.div key={index} variants={scaleIn}>
