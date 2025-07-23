@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Calendar,
   Users,
@@ -18,31 +18,39 @@ import {
   TrendingUp,
   Shield,
   Zap,
-} from "lucide-react"
-import { useState } from "react"
-import { motion } from "framer-motion"
+  LifeBuoy,
+  BarChart3,
+  CalendarDays,
+  Palette,
+  CalendarCheck,
+  MessageCircleReply,
+} from "lucide-react";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import logo from "@/assets/logo-site.png";
+import Image from "next/image";
 
 export default function Component() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Animation variants
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
     transition: { duration: 0.6, ease: "easeOut" },
-  }
+  };
 
   const fadeInLeft = {
     initial: { opacity: 0, x: -60 },
     animate: { opacity: 1, x: 0 },
     transition: { duration: 0.6, ease: "easeOut" },
-  }
+  };
 
   const fadeInRight = {
     initial: { opacity: 0, x: 60 },
     animate: { opacity: 1, x: 0 },
     transition: { duration: 0.6, ease: "easeOut" },
-  }
+  };
 
   const staggerContainer = {
     animate: {
@@ -50,13 +58,13 @@ export default function Component() {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const scaleIn = {
     initial: { opacity: 0, scale: 0.8 },
     animate: { opacity: 1, scale: 1 },
     transition: { duration: 0.5, ease: "easeOut" },
-  }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0f1729] via-[#1e293b] to-[#0f172a] text-white">
@@ -65,21 +73,22 @@ export default function Component() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="flex items-center justify-between px-4 sm:px-6 py-4 max-w-7xl mx-auto relative"
+        className="flex items-center justify-center px-4 sm:px-6 py-4 max-w-7xl mx-auto relative"
       >
         <motion.div
           className="flex items-center gap-2"
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
-          <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-red-500 to-blue-600 rounded-lg flex items-center justify-center">
+          {/* <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-red-500 to-blue-600 rounded-lg flex items-center justify-center">
             <Scissors className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-          </div>
-          <span className="font-bold text-lg sm:text-xl">BarberBook</span>
+          </div> */}
+          {/* <span className="font-bold text-lg sm:text-xl">BarberBook</span> */}
+          <Image src={logo} alt="" className="w-52" />
         </motion.div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        {/* <nav className="hidden md:flex items-center gap-8">
           {["Features", "Demo", "Pricing", "Contact"].map((item, index) => (
             <motion.a
               key={item}
@@ -93,10 +102,10 @@ export default function Component() {
               {item}
             </motion.a>
           ))}
-        </nav>
+        </nav> */}
 
         {/* Desktop CTA Buttons */}
-        <motion.div
+        {/* <motion.div
           className="hidden sm:flex items-center gap-3"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -111,19 +120,23 @@ export default function Component() {
           <Button className="bg-gradient-to-r from-red-500 to-blue-600 hover:from-red-600 hover:to-blue-700 text-white text-sm px-4 py-2 transition-all duration-300 hover:scale-105">
             Get Started
           </Button>
-        </motion.div>
+        </motion.div> */}
 
         {/* Mobile Menu Button */}
-        <motion.button
+        {/* <motion.button
           className="md:hidden p-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           whileTap={{ scale: 0.95 }}
         >
-          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </motion.button>
+          {mobileMenuOpen ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <Menu className="w-6 h-6" />
+          )}
+        </motion.button> */}
 
         {/* Mobile Menu */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{
             opacity: mobileMenuOpen ? 1 : 0,
@@ -158,11 +171,11 @@ export default function Component() {
               Get Started
             </Button>
           </div>
-        </motion.div>
+        </motion.div> */}
       </motion.header>
 
       {/* Hero Section */}
-      <section className="px-4 sm:px-6 py-12 sm:py-20 max-w-7xl mx-auto text-center relative">
+      <section className="px-4 sm:px-6 py-12 pt-6 sm:py-20 max-w-7xl mx-auto text-center relative md:pb-4">
         {/* Background gradient blob */}
         <motion.div
           className="absolute top-0 right-1/4 w-48 h-48 sm:w-96 sm:h-96 bg-gradient-to-br from-red-500 to-blue-600 rounded-full blur-3xl opacity-20"
@@ -182,7 +195,9 @@ export default function Component() {
             className="inline-flex items-center gap-2 bg-slate-800 border border-slate-600 rounded-full px-3 sm:px-4 py-2 mb-6 sm:mb-8 text-xs sm:text-sm"
             {...fadeInUp}
           >
-            <span className="text-slate-300">🎉 Now serving 500+ barbershops nationwide</span>
+            <span className="text-slate-300">
+              🎉 Now serving 500+ barbershops nationwide
+            </span>
           </motion.div>
 
           <motion.h1
@@ -191,10 +206,10 @@ export default function Component() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Modern scheduling
+            Agenda lotada, gestão simplificada.
             <br />
             <span className="bg-gradient-to-r from-red-500 to-blue-600 bg-clip-text text-transparent">
-              for classic barbershops
+              O sistema que sua barbearia merece.
             </span>
           </motion.h1>
 
@@ -204,8 +219,10 @@ export default function Component() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Streamline your barbershop operations with our all-in-one appointment scheduling system. Boost bookings,
-            reduce no-shows, and grow your business effortlessly.
+            Chega de perder tempo com anotações em papel e telefonemas. O
+            BarberBook é o sistema tudo-em-um que organiza seus agendamentos,
+            reduz as faltas e te dá o controle total do seu negócio. Mais
+            clientes, menos dor de cabeça.
           </motion.p>
 
           <motion.div
@@ -214,17 +231,13 @@ export default function Component() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="bg-gradient-to-r from-red-500 to-blue-600 hover:from-red-600 hover:to-blue-700 text-white text-base sm:text-lg px-6 sm:px-8 py-3 w-full sm:w-auto transition-all duration-300">
-                Start Free Trial
-              </Button>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                variant="outline"
-                className="border-slate-300 text-slate-300 hover:bg-slate-300 hover:text-slate-900 bg-transparent text-base sm:text-lg px-6 sm:px-8 py-3 w-full sm:w-auto transition-all duration-300"
-              >
-                Watch Demo
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-full"
+            >
+              <Button className="bg-gradient-to-r from-red-500 to-blue-600 hover:from-red-600 hover:to-blue-700 text-white text-base sm:text-lg px-6 sm:px-8 py-3 w-full transition-all duration-300 max-w-96">
+                Fale com um Especialista
               </Button>
             </motion.div>
           </motion.div>
@@ -238,12 +251,31 @@ export default function Component() {
             viewport={{ once: true }}
           >
             {[
-              { value: "98%", label: "Customer Satisfaction", color: "text-red-500" },
-              { value: "40%", label: "Increase in Bookings", color: "text-blue-500" },
-              { value: "24/7", label: "Online Booking", color: "text-red-500" },
+              {
+                value: "100%",
+                label: "de Satisfação dos Clientes",
+                color: "text-red-500",
+              },
+              {
+                value: "60%",
+                label: "de Aumento nos Agendamentos",
+                color: "text-blue-500",
+              },
+              {
+                value: "24/7",
+                label: "de Agendamento Online",
+                color: "text-red-500",
+              },
             ].map((stat, index) => (
-              <motion.div key={index} variants={fadeInUp} whileHover={{ scale: 1.05 }} className="cursor-default">
-                <div className={`text-2xl sm:text-3xl font-bold ${stat.color}`}>{stat.value}</div>
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                whileHover={{ scale: 1.05 }}
+                className="cursor-default"
+              >
+                <div className={`text-2xl sm:text-3xl font-bold ${stat.color}`}>
+                  {stat.value}
+                </div>
                 <div className="text-slate-300 text-sm">{stat.label}</div>
               </motion.div>
             ))}
@@ -252,13 +284,16 @@ export default function Component() {
       </section>
 
       {/* What You Get Section */}
-      <section className="px-4 sm:px-6 py-12 sm:py-20 max-w-7xl mx-auto">
+      {/* <section className="px-4 sm:px-6 py-12 sm:py-20 max-w-7xl mx-auto">
         <div className="text-center mb-12 sm:mb-16">
-          <motion.h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" {...fadeInUp}>
-            Everything you need to run
+          <motion.h2
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
+            {...fadeInUp}
+          >
+            Tudo o que você precisa para ter
             <br />
             <span className="bg-gradient-to-r from-red-500 to-blue-600 bg-clip-text text-transparent">
-              a successful barbershop
+              uma barbearia de sucesso.
             </span>
           </motion.h2>
           <motion.p
@@ -268,29 +303,33 @@ export default function Component() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            From booking to payment, we handle it all so you can focus on what you do best
+            Do agendamento ao pagamento, nós cuidamos de tudo para que você
+            possa focar no que faz de melhor: a arte de barbear.
           </motion.p>
         </div>
 
-        {/* Benefits Grid */}
+
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 mb-16"
+          className="gap-8 sm:gap-12 mb-16"
           variants={staggerContainer}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
         >
-          {/* Left Column - Benefits */}
+
           <motion.div className="space-y-6" variants={fadeInLeft}>
             <div className="flex items-start gap-4">
               <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                 <CheckCircle className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-2">Increase Revenue by 40%</h3>
+                <h3 className="text-xl font-bold mb-2">
+                  Aumente seu Faturamento em até 40%:
+                </h3>
                 <p className="text-slate-300">
-                  Our automated booking system fills your schedule gaps and reduces no-shows, directly boosting your
-                  daily revenue.
+                  buracos na sua agenda e envia lembretes automáticos,
+                  diminuindo drasticamente as faltas e aumentando seu lucro
+                  diário.
                 </p>
               </div>
             </div>
@@ -300,10 +339,13 @@ export default function Component() {
                 <TrendingUp className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-2">Save 10+ Hours Per Week</h3>
+                <h3 className="text-xl font-bold mb-2">
+                  Ganhe 10+ Horas por Semana:
+                </h3>
                 <p className="text-slate-300">
-                  Stop answering booking calls and managing schedules manually. Our system handles everything
-                  automatically.
+                  Pare de interromper seu trabalho para atender o telefone.
+                  Deixe que o BarberBook gerencie seus agendamentos de forma
+                  automática e inteligente.
                 </p>
               </div>
             </div>
@@ -313,10 +355,13 @@ export default function Component() {
                 <Star className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-2">Improve Customer Experience</h3>
+                <h3 className="text-xl font-bold mb-2">
+                  Fidelize seus Clientes:
+                </h3>
                 <p className="text-slate-300">
-                  Customers love the convenience of 24/7 online booking, automated reminders, and easy rescheduling
-                  options.
+                  Ofereça a conveniência que eles amam. Agendamento online 24h,
+                  reagendamento fácil e uma comunicação profissional que os fará
+                  voltar sempre.
                 </p>
               </div>
             </div>
@@ -326,16 +371,20 @@ export default function Component() {
                 <Shield className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-2">Secure & Reliable</h3>
+                <h3 className="text-xl font-bold mb-2">
+                  Gestão Financeira sem Complicação:
+                </h3>
                 <p className="text-slate-300">
-                  Bank-level security for all transactions and customer data. 99.9% uptime guarantee with 24/7 support.
+                  Tenha uma visão clara dos seus ganhos, comissões dos barbeiros
+                  e serviços mais populares. Tome decisões baseadas em dados,
+                  não em achismos.
                 </p>
               </div>
             </div>
           </motion.div>
 
-          {/* Right Column - Visual Features */}
-          <motion.div className="space-y-4" variants={fadeInRight}>
+
+         <motion.div className="space-y-4" variants={fadeInRight}>
             <Card className="bg-gradient-to-br from-slate-800 to-slate-900 border-slate-600 p-6 hover:border-slate-500 transition-all duration-300">
               <CardContent className="p-0">
                 <div className="flex items-center gap-4 mb-4">
@@ -344,7 +393,9 @@ export default function Component() {
                   </div>
                   <div>
                     <h3 className="text-lg font-bold">Smart Scheduling</h3>
-                    <p className="text-slate-300 text-sm">AI-powered appointment optimization</p>
+                    <p className="text-slate-300 text-sm">
+                      AI-powered appointment optimization
+                    </p>
                   </div>
                 </div>
                 <div className="bg-slate-800 rounded-lg p-3 text-sm">
@@ -374,7 +425,9 @@ export default function Component() {
                   </div>
                   <div>
                     <h3 className="text-lg font-bold">Instant Payments</h3>
-                    <p className="text-slate-300 text-sm">Accept all payment methods</p>
+                    <p className="text-slate-300 text-sm">
+                      Accept all payment methods
+                    </p>
                   </div>
                 </div>
                 <div className="bg-slate-800 rounded-lg p-3 text-sm">
@@ -399,24 +452,27 @@ export default function Component() {
                   </div>
                   <div>
                     <h3 className="text-lg font-bold">Auto Reminders</h3>
-                    <p className="text-slate-300 text-sm">Reduce no-shows by 85%</p>
+                    <p className="text-slate-300 text-sm">
+                      Reduce no-shows by 85%
+                    </p>
                   </div>
                 </div>
                 <div className="bg-slate-800 rounded-lg p-3 text-sm">
                   <div className="flex items-center gap-2 mb-2">
                     <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                    <span className="text-slate-300">SMS sent to John Smith</span>
+                    <span className="text-slate-300">
+                      SMS sent to John Smith
+                    </span>
                   </div>
                   <div className="text-xs text-slate-400">
-                    "Hi John! Reminder: Haircut tomorrow at 2:00 PM with Mike. Reply C to confirm or R to reschedule."
+                    "Hi John! Reminder: Haircut tomorrow at 2:00 PM with Mike.
+                    Reply C to confirm or R to reschedule."
                   </div>
                 </div>
               </CardContent>
             </Card>
-          </motion.div>
-        </motion.div>
 
-        {/* Quick Features List */}
+        </motion.div>
         <motion.div
           className="bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-600 rounded-2xl p-8 sm:p-12"
           initial={{ opacity: 0, y: 60 }}
@@ -425,8 +481,13 @@ export default function Component() {
           transition={{ duration: 0.8 }}
         >
           <div className="text-center mb-8">
-            <h3 className="text-2xl sm:text-3xl font-bold mb-4">Plus everything else you need</h3>
-            <p className="text-slate-300">All the tools to run your barbershop like a pro</p>
+            <h3 className="text-2xl sm:text-3xl font-bold mb-4">
+              E claro, tudo mais que você precisa.
+            </h3>
+            <p className="text-slate-300">
+              As ferramentas completas para gerenciar sua barbearia como um
+              profissional.
+            </p>
           </div>
 
           <motion.div
@@ -437,12 +498,12 @@ export default function Component() {
             viewport={{ once: true }}
           >
             {[
-              { icon: Users, text: "Customer Database & History" },
-              { icon: Smartphone, text: "Mobile App for iOS & Android" },
-              { icon: Clock, text: "Staff Scheduling & Management" },
-              { icon: TrendingUp, text: "Analytics & Reporting" },
-              { icon: Zap, text: "Walk-in Management" },
-              { icon: Shield, text: "Data Security & Backup" },
+              { icon: Users, text: "Cadastro de Clientes e Histórico" },
+              // { icon: Smartphone, text: "Mobile App for iOS & Android" },
+              { icon: Clock, text: "Gestão de Barbeiros e Horários" },
+              { icon: TrendingUp, text: "Relatórios e Análise de Desempenho" },
+              { icon: Zap, text: "Controle de Férias e Dias de Folga" },
+              { icon: Shield, text: "Segurança Total dos seus Dados" },
             ].map((feature, index) => (
               <motion.div
                 key={index}
@@ -471,18 +532,22 @@ export default function Component() {
             </Button>
           </motion.div>
         </motion.div>
-      </section>
+      </section> */}
 
       {/* Trust Section */}
-      <motion.section
+      {/* <motion.section
         className="px-4 sm:px-6 py-12 sm:py-16 max-w-7xl mx-auto text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <motion.p className="text-slate-300 mb-6 sm:mb-8 text-sm sm:text-base" {...fadeInUp}>
-          Trusted by <span className="text-white font-semibold">500+</span> barbershops across the country
+        <motion.p
+          className="text-slate-300 mb-6 sm:mb-8 text-sm sm:text-base"
+          {...fadeInUp}
+        >
+          Trusted by <span className="text-white font-semibold">500+</span>{" "}
+          barbershops across the country
         </motion.p>
         <motion.div
           className="flex flex-wrap items-center justify-center gap-4 sm:gap-12 opacity-60"
@@ -491,7 +556,13 @@ export default function Component() {
           whileInView="animate"
           viewport={{ once: true }}
         >
-          {["CLASSIC CUTS", "MODERN BARBER", "STYLE LOUNGE", "SHARP EDGES", "THE BARBER SHOP"].map((brand, index) => (
+          {[
+            "CLASSIC CUTS",
+            "MODERN BARBER",
+            "STYLE LOUNGE",
+            "SHARP EDGES",
+            "THE BARBER SHOP",
+          ].map((brand, index) => (
             <motion.span
               key={brand}
               className="text-sm sm:text-xl font-bold"
@@ -502,29 +573,33 @@ export default function Component() {
             </motion.span>
           ))}
         </motion.div>
-      </motion.section>
+      </motion.section> */}
 
       {/* Demo Video Section */}
       <motion.section
         id="demo"
-        className="px-4 sm:px-6 py-12 sm:py-20 max-w-6xl mx-auto"
+        className="px-4 sm:px-6 py-12 sm:py-20 max-w-7xl mx-auto"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
         <div className="text-center mb-8 sm:mb-12">
-          <motion.h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" {...fadeInUp}>
-            See BarberBook in action
+          <motion.h2
+            className="text-3xl sm:text-4xl md:text-7xl font-bold mb-4"
+            {...fadeInUp}
+          >
+            Veja o App em Ação
           </motion.h2>
           <motion.p
-            className="text-slate-300 text-base sm:text-xl max-w-2xl mx-auto"
+            className="text-slate-300 text-base sm:text-xl md:text-2xl mx-auto"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Watch how easy it is to manage your barbershop with our intuitive scheduling system
+            Veja como é fácil gerenciar sua barbearia com nosso sistema de
+            agendamento intuitivo
           </motion.p>
         </div>
 
@@ -549,12 +624,20 @@ export default function Component() {
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
                 >
-                  <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                  <svg
+                    className="w-6 h-6 sm:w-8 sm:h-8 text-white ml-1"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <path d="M8 5v14l11-7z" />
                   </svg>
                 </motion.div>
-                <h3 className="text-xl sm:text-2xl font-bold mb-2">Demo Video</h3>
-                <p className="text-slate-300 text-sm sm:text-base">Click to watch the full demonstration</p>
+                <h3 className="text-xl sm:text-2xl font-bold mb-2">
+                  Vídeo demosntração
+                </h3>
+                <p className="text-slate-300 text-sm sm:text-base">
+                  Clique para ver o vídeo de demostração
+                </p>
               </div>
               <div className="absolute inset-0 cursor-pointer hover:bg-white/5 transition-colors"></div>
             </motion.div>
@@ -572,20 +655,24 @@ export default function Component() {
         transition={{ duration: 0.8 }}
       >
         <div className="text-center mb-12 sm:mb-16">
-          <motion.h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" {...fadeInUp}>
-            Everything your barbershop
+          <motion.h2
+            className="text-3xl sm:text-4xl md:text-7xl font-bold mb-4"
+            {...fadeInUp}
+          >
+            Tudo o que sua barbearia precisa
             <br />
-            needs to succeed
+            para ter sucesso
           </motion.h2>
-          <motion.p
-            className="text-slate-300 text-base sm:text-xl max-w-2xl mx-auto"
+          {/* <motion.p
+            className="text-slate-300 text-base sm:text-xl md:text-2xl mx-auto"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            From online booking to payment processing, we've got every aspect of your business covered
-          </motion.p>
+            From online booking to payment processing, we've got every aspect of
+            your business covered
+          </motion.p> */}
         </div>
 
         <motion.div
@@ -597,46 +684,46 @@ export default function Component() {
         >
           {[
             {
-              icon: Calendar,
-              title: "Online Booking",
+              icon: CalendarCheck,
+              title: "Agenda Online 24h",
               description:
-                "Let customers book appointments 24/7 through your custom booking page. Reduce phone calls and increase bookings.",
-              gradient: "from-red-500 to-blue-600",
+                "Sua barbearia aberta para agendamentos 24/7. Deixe que seus clientes marquem o horário perfeito, mesmo com a porta fechada, e veja sua agenda encher sem precisar atender o telefone.",
+              gradient: "from-blue-500 to-cyan-400",
             },
             {
-              icon: Users,
-              title: "Customer Management",
+              icon: MessageCircleReply,
+              title: "Lembretes via WhatsApp",
               description:
-                "Keep detailed customer profiles with service history, preferences, and contact information all in one place.",
-              gradient: "from-blue-500 to-red-500",
+                "Acabe com os 'furos' na agenda. Nosso sistema envia lembretes automáticos, garantindo que seus clientes nunca mais esqueçam o horário e reduzindo o não comparecimento a zero.",
+              gradient: "from-green-500 to-teal-400",
             },
             {
-              icon: CreditCard,
-              title: "Payment Processing",
+              icon: Palette,
+              title: "Painel de Controle Total",
               description:
-                "Accept payments online, in-person, or through the app. Automatic invoicing and receipt generation included.",
-              gradient: "from-red-500 to-blue-600",
+                "Sua barbearia, suas regras. Personalize tudo: serviços, preços, horários, profissionais, planos e até as cores da sua página. Gerencie seu negócio de forma simples e visual.",
+              gradient: "from-purple-500 to-indigo-400",
             },
             {
-              icon: MessageSquare,
-              title: "Automated Reminders",
+              icon: CalendarDays,
+              title: "Agenda Inteligente para Barbeiros",
               description:
-                "Reduce no-shows with automatic SMS and email reminders. Customers can confirm or reschedule with one click.",
-              gradient: "from-blue-500 to-red-500",
+                "Uma visão clara e organizada do seu dia. Visualize seus agendamentos por dia ou semana, com cores para cada profissional e detalhes do cliente a um clique. Menos confusão, mais produtividade.",
+              gradient: "from-orange-500 to-amber-400",
             },
             {
-              icon: Smartphone,
-              title: "Mobile App",
+              icon: BarChart3,
+              title: "Métricas que Geram Lucro",
               description:
-                "Manage your schedule on the go with our mobile app. Available for both iOS and Android devices.",
-              gradient: "from-red-500 to-blue-600",
+                "Entenda a saúde do seu negócio em segundos. Tenha acesso a gráficos claros sobre receita bruta, comissões e serviços mais lucrativos. Tome decisões com base em dados, não em achismos.",
+              gradient: "from-red-500 to-rose-400",
             },
             {
-              icon: Clock,
-              title: "Staff Scheduling",
+              icon: LifeBuoy,
+              title: "Suporte que Resolve",
               description:
-                "Manage multiple barbers, set individual schedules, and track performance with detailed analytics.",
-              gradient: "from-blue-500 to-red-500",
+                "Estamos aqui para ajudar você a crescer. Conte com um suporte rápido e humanizado, disponível todos os dias, para tirar dúvidas e garantir que sua barbearia aproveite 100% da plataforma.",
+              gradient: "from-gray-600 to-slate-500",
             },
           ].map((feature, index) => (
             <motion.div key={index} variants={scaleIn}>
@@ -649,8 +736,12 @@ export default function Component() {
                   >
                     <feature.icon className="w-5 h-5 sm:w-6 sm:h-6" />
                   </motion.div>
-                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white">{feature.title}</h3>
-                  <p className="text-slate-300 text-sm">{feature.description}</p>
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white">
+                    {feature.title}
+                  </h3>
+                  <p className="text-slate-300 text-sm">
+                    {feature.description}
+                  </p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -667,8 +758,11 @@ export default function Component() {
         transition={{ duration: 0.8 }}
       >
         <div className="text-center mb-12 sm:mb-16">
-          <motion.h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" {...fadeInUp}>
-            What barbershop owners say
+          <motion.h2
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
+            {...fadeInUp}
+          >
+            O que os donos de barbearia dizem.
           </motion.h2>
         </div>
 
@@ -681,17 +775,21 @@ export default function Component() {
         >
           {[
             {
-              name: "Marcus Johnson",
-              title: "Owner, Classic Cuts Barbershop",
+              name: "Roberto Filho",
+              image:
+                "https://res.cloudinary.com/de1f7lccc/image/upload/v1750433551/barber_profiles/elmby8i19wcjwjhfyhoa.jpg",
+              title: "Dono, Barbearia Imperial",
               testimonial:
-                "BarberBook transformed my business. Online bookings increased by 60% and no-shows dropped to almost zero. The automated reminders are a game-changer!",
+                "O BarberBook mudou o jogo para mim. Os agendamentos online aumentaram 60% e as faltas caíram para quase zero. Os lembretes automáticos são a melhor função!",
               gradient: "from-red-500 to-blue-600",
             },
             {
-              name: "Tony Rodriguez",
-              title: "Owner, Sharp Edges Barber Co.",
+              name: "Jedaias",
+              image:
+                "https://res.cloudinary.com/de1f7lccc/image/upload/v1750433551/barber_profiles/elmby8i19wcjwjhfyhoa.jpg",
+              title: "Dono, Barbearia Prime",
               testimonial:
-                "The customer management features are incredible. I can track every client's preferences and history. My customers love the convenience of online booking.",
+                "O controle de comissões e o histórico de cada cliente são incríveis. Sei exatamente o que cada um gosta e consigo gerenciar a equipe de forma justa. Meus clientes amam a facilidade de agendar online.",
               gradient: "from-blue-500 to-red-500",
             },
           ].map((testimonial, index) => (
@@ -699,17 +797,26 @@ export default function Component() {
               <Card className="bg-gradient-to-br from-slate-800 to-slate-900 border-slate-600 p-6 sm:p-8 h-full hover:border-slate-500 transition-all duration-300">
                 <CardContent className="p-0">
                   <div className="flex items-center gap-3 sm:gap-4 mb-4">
-                    <motion.div
+                    <motion.img
                       className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${testimonial.gradient} rounded-full`}
                       whileHover={{ scale: 1.1 }}
+                      src={testimonial.image}
                     />
                     <div>
-                      <div className="font-semibold text-sm sm:text-base">{testimonial.name}</div>
-                      <div className="text-slate-300 text-xs sm:text-sm">{testimonial.title}</div>
+                      <div className="text-slate-200 font-semibold text-sm sm:text-base">
+                        {testimonial.name}
+                      </div>
+                      <div className="text-slate-300 text-xs sm:text-sm">
+                        {testimonial.title}
+                        <div className="flex text-yellow-400 text-sm">
+                          ★★★★★
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <p className="text-slate-300 mb-4 text-sm sm:text-base">{testimonial.testimonial}</p>
-                  <div className="flex text-yellow-400 text-sm">★★★★★</div>
+                  <p className="text-slate-300 mb-4 text-sm sm:text-base">
+                    {testimonial.testimonial}
+                  </p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -753,10 +860,10 @@ export default function Component() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Ready to modernize
+            Sua barbearia
             <br />
             <span className="bg-gradient-to-r from-red-500 to-blue-600 bg-clip-text text-transparent">
-              your barbershop?
+              pode ser muito mais.
             </span>
           </motion.h2>
           <motion.p
@@ -766,8 +873,9 @@ export default function Component() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Join hundreds of successful barbershops using BarberBook to streamline operations, increase bookings, and
-            grow their business. Start your free trial today!
+            Continue com a agenda de papel e as incertezas, ou experimente a
+            tranquilidade de ter uma operação profissional, lucrativa e 100% sob
+            seu controle. A escolha é sua.
           </motion.p>
           <motion.div
             className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-4"
@@ -778,19 +886,19 @@ export default function Component() {
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button className="bg-gradient-to-r from-red-500 to-blue-600 hover:from-red-600 hover:to-blue-700 text-white text-base sm:text-lg px-6 sm:px-8 py-3 w-full sm:w-auto transition-all duration-300">
-                Start Free Trial
+                Falar com um Especialista
               </Button>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            {/* <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 variant="outline"
                 className="border-slate-300 text-slate-300 hover:bg-slate-300 hover:text-slate-900 bg-transparent text-base sm:text-lg px-6 sm:px-8 py-3 w-full sm:w-auto transition-all duration-300"
               >
                 Schedule Demo
               </Button>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
-          <motion.p
+          {/* <motion.p
             className="text-slate-400 text-xs sm:text-sm"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -798,34 +906,39 @@ export default function Component() {
             transition={{ duration: 0.6, delay: 0.8 }}
           >
             No credit card required • 14-day free trial • Cancel anytime
-          </motion.p>
+          </motion.p> */}
         </motion.div>
       </motion.section>
 
       {/* Footer */}
       <motion.footer
         id="contact"
-        className="px-4 sm:px-6 py-12 sm:py-16 max-w-7xl mx-auto border-t border-slate-600"
+        className="px-4 sm:px-6 py-12 sm:py-16 max-w-7xl mx-auto"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <motion.div
+        {/* <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
           variants={staggerContainer}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
         >
-          <motion.div className="sm:col-span-2 lg:col-span-1" variants={fadeInUp}>
+          <motion.div
+            className="sm:col-span-2 lg:col-span-1"
+            variants={fadeInUp}
+          >
             <div className="flex items-center gap-2 mb-4">
               <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-red-500 to-blue-600 rounded-lg flex items-center justify-center">
                 <Scissors className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
               </div>
               <span className="font-bold text-lg sm:text-xl">BarberBook</span>
             </div>
-            <p className="text-slate-300 text-sm">The modern scheduling solution for barbershops and salons.</p>
+            <p className="text-slate-300 text-sm">
+              The modern scheduling solution for barbershops and salons.
+            </p>
           </motion.div>
 
           {[
@@ -843,11 +956,17 @@ export default function Component() {
             },
           ].map((section, index) => (
             <motion.div key={section.title} variants={fadeInUp}>
-              <h4 className="font-semibold mb-4 text-sm sm:text-base">{section.title}</h4>
+              <h4 className="font-semibold mb-4 text-sm sm:text-base">
+                {section.title}
+              </h4>
               <div className="space-y-2 text-slate-300 text-sm">
                 {section.links.map((link) => (
                   <p key={link}>
-                    <motion.a href="#" className="hover:text-white transition-colors" whileHover={{ x: 5 }}>
+                    <motion.a
+                      href="#"
+                      className="hover:text-white transition-colors"
+                      whileHover={{ x: 5 }}
+                    >
                       {link}
                     </motion.a>
                   </p>
@@ -855,7 +974,7 @@ export default function Component() {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
 
         <motion.div
           className="flex flex-col sm:flex-row sm:items-center justify-between pt-6 sm:pt-8 mt-6 sm:mt-8 border-t border-slate-600 gap-4"
@@ -865,22 +984,32 @@ export default function Component() {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-slate-300 text-xs sm:text-sm">
-            <span>© 2024 BarberBook. All Rights Reserved.</span>
-            <div className="flex gap-4">
-              <motion.a href="#" className="hover:text-white transition-colors" whileHover={{ y: -2 }}>
+            <span>
+              © 2025 BarbeariAgendamento. Todos os direito reservados.
+            </span>
+            {/* <div className="flex gap-4">
+              <motion.a
+                href="#"
+                className="hover:text-white transition-colors"
+                whileHover={{ y: -2 }}
+              >
                 Privacy Policy
               </motion.a>
-              <motion.a href="#" className="hover:text-white transition-colors" whileHover={{ y: -2 }}>
+              <motion.a
+                href="#"
+                className="hover:text-white transition-colors"
+                whileHover={{ y: -2 }}
+              >
                 Terms of Service
               </motion.a>
-            </div>
+            </div> */}
           </div>
 
           <div className="flex items-center gap-4">
-            {["Twitter", "LinkedIn", "Instagram"].map((social) => (
+            {["Instagram"].map((social) => (
               <motion.a
                 key={social}
-                href="#"
+                href="https://www.instagram.com/barbeariagendamento/"
                 className="text-slate-300 hover:text-white text-sm transition-colors"
                 whileHover={{ scale: 1.1, y: -2 }}
               >
@@ -891,5 +1020,5 @@ export default function Component() {
         </motion.div>
       </motion.footer>
     </div>
-  )
+  );
 }
