@@ -69,11 +69,7 @@ export default function Component() {
         transition={{ duration: 0.6 }}
         className="flex items-center justify-center md:justify-between px-4 sm:px-6 py-4 max-w-7xl mx-auto relative"
       >
-        <motion.div
-          className="flex items-center gap-2"
-          whileHover={{ scale: 1.05 }}
-          transition={{ type: "spring", stiffness: 400, damping: 10 }}
-        >
+        <motion.div className="flex items-center gap-2" whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}>
           {/* <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-red-500 to-blue-600 rounded-lg flex items-center justify-center">
             <Scissors className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
           </div> */}
@@ -185,14 +181,14 @@ export default function Component() {
         />
 
         <div className="relative z-10">
-          <motion.div
+          {/* <motion.div
             className="inline-flex items-center gap-2 bg-slate-800 border border-slate-600 rounded-full px-3 sm:px-4 py-2 mb-6 sm:mb-8 text-xs sm:text-sm"
             {...fadeInUp}
           >
             <span className="text-slate-300">
               🎉 Now serving 500+ barbershops nationwide
             </span>
-          </motion.div>
+          </motion.div> */}
 
           <motion.h1
             className="text-3xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 leading-tight"
@@ -202,9 +198,7 @@ export default function Component() {
           >
             Agenda lotada, gestão simplificada.
             <br />
-            <span className="bg-gradient-to-r from-red-500 to-blue-600 bg-clip-text text-transparent">
-              O sistema que sua barbearia merece.
-            </span>
+            <span className="bg-gradient-to-r from-red-500 to-blue-600 bg-clip-text text-transparent">O sistema que sua barbearia merece.</span>
           </motion.h1>
 
           <motion.p
@@ -213,10 +207,8 @@ export default function Component() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Chega de perder tempo com anotações em papel e telefonemas. O
-            BarberBook é o sistema tudo-em-um que organiza seus agendamentos,
-            reduz as faltas e te dá o controle total do seu negócio. Mais
-            clientes, menos dor de cabeça.
+            Chega de perder tempo com anotações em papel e telefonemas. O BarberBook é o sistema tudo-em-um que organiza seus agendamentos, reduz as
+            faltas e te dá o controle total do seu negócio. Mais clientes, menos dor de cabeça.
           </motion.p>
 
           <motion.div
@@ -225,11 +217,7 @@ export default function Component() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full"
-            >
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
               <Button className="bg-gradient-to-r from-red-500 to-blue-600 hover:from-red-600 hover:to-blue-700 text-white text-base sm:text-lg px-6 sm:px-8 py-3 w-full transition-all duration-300 max-w-96">
                 Fale com um Especialista
               </Button>
@@ -261,15 +249,8 @@ export default function Component() {
                 color: "text-red-500",
               },
             ].map((stat, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                whileHover={{ scale: 1.05 }}
-                className="cursor-default"
-              >
-                <div className={`text-2xl sm:text-3xl font-bold ${stat.color}`}>
-                  {stat.value}
-                </div>
+              <motion.div key={index} variants={fadeInUp} whileHover={{ scale: 1.05 }} className="cursor-default">
+                <div className={`text-2xl sm:text-3xl font-bold ${stat.color}`}>{stat.value}</div>
                 <div className="text-slate-300 text-sm">{stat.label}</div>
               </motion.div>
             ))}
@@ -579,10 +560,7 @@ export default function Component() {
         transition={{ duration: 0.8 }}
       >
         <div className="text-center mb-8 sm:mb-12">
-          <motion.h2
-            className="text-3xl sm:text-4xl md:text-7xl font-bold mb-4"
-            {...fadeInUp}
-          >
+          <motion.h2 className="text-3xl sm:text-4xl md:text-7xl font-bold mb-4" {...fadeInUp}>
             See BarberBook in action
           </motion.h2>
           <motion.p
@@ -592,8 +570,7 @@ export default function Component() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Watch how easy it is to manage your barbershop with our intuitive
-            scheduling system
+            Watch how easy it is to manage your barbershop with our intuitive scheduling system
           </motion.p>
         </div>
 
@@ -618,20 +595,12 @@ export default function Component() {
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
                 >
-                  <svg
-                    className="w-6 h-6 sm:w-8 sm:h-8 text-white ml-1"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
+                  <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
                   </svg>
                 </motion.div>
-                <h3 className="text-xl sm:text-2xl font-bold mb-2">
-                  Demo Video
-                </h3>
-                <p className="text-slate-300 text-sm sm:text-base">
-                  Click to watch the full demonstration
-                </p>
+                <h3 className="text-xl sm:text-2xl font-bold mb-2">Demo Video</h3>
+                <p className="text-slate-300 text-sm sm:text-base">Click to watch the full demonstration</p>
               </div>
               <div className="absolute inset-0 cursor-pointer hover:bg-white/5 transition-colors"></div>
             </motion.div>
@@ -649,10 +618,7 @@ export default function Component() {
         transition={{ duration: 0.8 }}
       >
         <div className="text-center mb-12 sm:mb-16">
-          <motion.h2
-            className="text-3xl sm:text-4xl md:text-7xl font-bold mb-4"
-            {...fadeInUp}
-          >
+          <motion.h2 className="text-3xl sm:text-4xl md:text-7xl font-bold mb-4" {...fadeInUp}>
             Everything your barbershop
             <br />
             needs to succeed
@@ -664,8 +630,7 @@ export default function Component() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            From online booking to payment processing, we've got every aspect of
-            your business covered
+            From online booking to payment processing, we've got every aspect of your business covered
           </motion.p>
         </div>
 
@@ -680,43 +645,37 @@ export default function Component() {
             {
               icon: Calendar,
               title: "Reserva Online",
-              description:
-                "Let customers book appointments 24/7 through your custom booking page. Reduce phone calls and increase bookings.",
+              description: "Let customers book appointments 24/7 through your custom booking page. Reduce phone calls and increase bookings.",
               gradient: "from-red-500 to-blue-600",
             },
             {
               icon: Users,
               title: "Customer Management",
-              description:
-                "Keep detailed customer profiles with service history, preferences, and contact information all in one place.",
+              description: "Keep detailed customer profiles with service history, preferences, and contact information all in one place.",
               gradient: "from-blue-500 to-red-500",
             },
             {
               icon: CreditCard,
               title: "Payment Processing",
-              description:
-                "Accept payments online, in-person, or through the app. Automatic invoicing and receipt generation included.",
+              description: "Accept payments online, in-person, or through the app. Automatic invoicing and receipt generation included.",
               gradient: "from-red-500 to-blue-600",
             },
             {
               icon: MessageSquare,
               title: "Automated Reminders",
-              description:
-                "Reduce no-shows with automatic SMS and email reminders. Customers can confirm or reschedule with one click.",
+              description: "Reduce no-shows with automatic SMS and email reminders. Customers can confirm or reschedule with one click.",
               gradient: "from-blue-500 to-red-500",
             },
             {
               icon: Smartphone,
               title: "Mobile App",
-              description:
-                "Manage your schedule on the go with our mobile app. Available for both iOS and Android devices.",
+              description: "Manage your schedule on the go with our mobile app. Available for both iOS and Android devices.",
               gradient: "from-red-500 to-blue-600",
             },
             {
               icon: Clock,
               title: "Staff Scheduling",
-              description:
-                "Manage multiple barbers, set individual schedules, and track performance with detailed analytics.",
+              description: "Manage multiple barbers, set individual schedules, and track performance with detailed analytics.",
               gradient: "from-blue-500 to-red-500",
             },
           ].map((feature, index) => (
@@ -730,12 +689,8 @@ export default function Component() {
                   >
                     <feature.icon className="w-5 h-5 sm:w-6 sm:h-6" />
                   </motion.div>
-                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white">
-                    {feature.title}
-                  </h3>
-                  <p className="text-slate-300 text-sm">
-                    {feature.description}
-                  </p>
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white">{feature.title}</h3>
+                  <p className="text-slate-300 text-sm">{feature.description}</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -752,10 +707,7 @@ export default function Component() {
         transition={{ duration: 0.8 }}
       >
         <div className="text-center mb-12 sm:mb-16">
-          <motion.h2
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
-            {...fadeInUp}
-          >
+          <motion.h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4" {...fadeInUp}>
             O que os donos de barbearia dizem.
           </motion.h2>
         </div>
@@ -770,8 +722,7 @@ export default function Component() {
           {[
             {
               name: "Roberto Filho",
-              image:
-                "https://res.cloudinary.com/de1f7lccc/image/upload/v1750433551/barber_profiles/elmby8i19wcjwjhfyhoa.jpg",
+              image: "https://res.cloudinary.com/de1f7lccc/image/upload/v1750433551/barber_profiles/elmby8i19wcjwjhfyhoa.jpg",
               title: "Dono, Barbearia Imperial",
               testimonial:
                 "O BarberBook mudou o jogo para mim. Os agendamentos online aumentaram 60% e as faltas caíram para quase zero. Os lembretes automáticos são a melhor função!",
@@ -779,8 +730,7 @@ export default function Component() {
             },
             {
               name: "Jedaias",
-              image:
-                "https://res.cloudinary.com/de1f7lccc/image/upload/v1750433551/barber_profiles/elmby8i19wcjwjhfyhoa.jpg",
+              image: "https://res.cloudinary.com/de1f7lccc/image/upload/v1750433551/barber_profiles/elmby8i19wcjwjhfyhoa.jpg",
               title: "Dono, Barbearia Prime",
               testimonial:
                 "O controle de comissões e o histórico de cada cliente são incríveis. Sei exatamente o que cada um gosta e consigo gerenciar a equipe de forma justa. Meus clientes amam a facilidade de agendar online.",
@@ -797,20 +747,14 @@ export default function Component() {
                       src={testimonial.image}
                     />
                     <div>
-                      <div className="text-slate-200 font-semibold text-sm sm:text-base">
-                        {testimonial.name}
-                      </div>
+                      <div className="text-slate-200 font-semibold text-sm sm:text-base">{testimonial.name}</div>
                       <div className="text-slate-300 text-xs sm:text-sm">
                         {testimonial.title}
-                        <div className="flex text-yellow-400 text-sm">
-                          ★★★★★
-                        </div>
+                        <div className="flex text-yellow-400 text-sm">★★★★★</div>
                       </div>
                     </div>
                   </div>
-                  <p className="text-slate-300 mb-4 text-sm sm:text-base">
-                    {testimonial.testimonial}
-                  </p>
+                  <p className="text-slate-300 mb-4 text-sm sm:text-base">{testimonial.testimonial}</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -856,9 +800,7 @@ export default function Component() {
           >
             Sua barbearia
             <br />
-            <span className="bg-gradient-to-r from-red-500 to-blue-600 bg-clip-text text-transparent">
-              pode ser muito mais.
-            </span>
+            <span className="bg-gradient-to-r from-red-500 to-blue-600 bg-clip-text text-transparent">pode ser muito mais.</span>
           </motion.h2>
           <motion.p
             className="text-slate-300 mb-6 sm:mb-8 max-w-2xl mx-auto text-base sm:text-lg"
@@ -867,9 +809,8 @@ export default function Component() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Continue com a agenda de papel e as incertezas, ou experimente a
-            tranquilidade de ter uma operação profissional, lucrativa e 100% sob
-            seu controle. A escolha é sua.
+            Continue com a agenda de papel e as incertezas, ou experimente a tranquilidade de ter uma operação profissional, lucrativa e 100% sob seu
+            controle. A escolha é sua.
           </motion.p>
           <motion.div
             className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-4"
@@ -978,9 +919,7 @@ export default function Component() {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-slate-300 text-xs sm:text-sm">
-            <span>
-              © 2025 BarbeariAgendamento. Todos os direito reservados.
-            </span>
+            <span>© 2025 BarbeariAgendamento. Todos os direito reservados.</span>
             {/* <div className="flex gap-4">
               <motion.a
                 href="#"
